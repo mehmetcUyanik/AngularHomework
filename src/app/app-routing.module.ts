@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users/users.component';
 
-const routes: Routes = [];
+const routes: Routes= [
+  {path:'home',component: HomeComponent},
+  {path:'users',component: UsersComponent},
+  {path:'posts',component: UsersComponent},
+  {path:'categories',component: UsersComponent},
+  {path:'comments',component: UsersComponent}
+]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes) 
+  ]
 })
 export class AppRoutingModule { }
