@@ -1,1 +1,22 @@
-<p>users works!</p>
+<div class="table-container">
+
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Username</th>
+                <th>E-mail</th>
+                <th>Creation Date</th>
+                <th>Is Active</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let users of userList">
+                <td>{{ users.user_id }}</td>
+                <td>{{ users.username }}</td>
+                <td>{{ users.email }}</td>
+                <td>{{ users.creation_date }}</td>
+                <td>{{ users.is_active }}</td>
+            </tr>
+        </tbody>         
+

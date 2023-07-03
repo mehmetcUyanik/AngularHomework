@@ -1,1 +1,17 @@
-<p>categories works!</p>
+<div class="table-container">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Category ID</th>
+                <th>Category name</th>
+                <th>Creation Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let categories of categoryList">
+                <td>{{ categories.category_id }}</td>
+                <td>{{ categories.category_name }}</td>
+                <td>{{ categories.creation_date }}</td>
+            </tr>
+        </tbody> 

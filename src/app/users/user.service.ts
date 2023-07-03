@@ -58,6 +58,11 @@ export class UserService {
         is_active: true
       }
     ]
+
+
+    getUserList(): Users[]{
+      return this.userList;
+    }
   
 
   constructor() { }
