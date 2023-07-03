@@ -1,1 +1,24 @@
-<p>comments works!</p>
+<div class="table-container">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Comment ID</th>
+                <th>Post Id</th>
+                <th>User ID</th>
+                <th>Comment</th>
+                <th>Creation Date</th>
+                <th>Is Confirmed</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let comments of commentList">
+                <td>{{ comments.comment_id }}</td>
+                <td>{{ comments.post_id }}</td>
+                <td>{{ comments.user_id }}</td>
+                <td>{{ comments.comment }}</td>
+                <td>{{ comments.creation_date }}</td>
+                <td>{{ comments.is_confirmed }}</td>
+            </tr>
+        </tbody>         
+

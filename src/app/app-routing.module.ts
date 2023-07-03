@@ -5,6 +5,7 @@ import { UsersComponent } from './users/users.component';
 import { PostsComponent } from './posts/posts.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CommentsComponent } from './comments/comments.component';
+import { PostDetailsComponent } from './posts/post-details/post-details.component';
 
 const routes: Routes= [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -12,7 +13,8 @@ const routes: Routes= [
   {path:'users',component: UsersComponent},
   {path:'posts',component: PostsComponent},
   {path:'categories',component: CategoriesComponent},
-  {path:'comments',component: CommentsComponent}
+  {path:'comments',component: CommentsComponent},
+  {path:'post-details',component: PostDetailsComponent}
 ]
 
 @NgModule({
