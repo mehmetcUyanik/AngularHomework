@@ -215,7 +215,9 @@ export class PostDetailsService {
     return this.postDetailsList;
   }
 
-
+  getPostContent(id: number):PostDetails{
+    return this.postDetailsList.find((post) => post.post_id === id)!
+  }
   
 
   constructor() { }

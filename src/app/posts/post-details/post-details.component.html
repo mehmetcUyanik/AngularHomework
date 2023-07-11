@@ -1,15 +1,13 @@
-<div class="table-container">
 
-    <table>
-        <thead>
-            <tr>
-                <th>Post ID</th>
-                <th>Content</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let postDetails of postDetailsList">
-                <td>{{ postDetails.post_id }}</td>
-                <td>{{ postDetails.content }}</td>
-            </tr>
-        </tbody>  
+
+
+<ul>
+    <li>
+        <strong>ID: </strong> {{ postItem?.post_id }}
+    </li>
+
+    <li>
+        <strong>Content: </strong> {{ postItem?.content }}
+    </li>
+
+</ul>

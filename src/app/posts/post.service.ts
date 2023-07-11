@@ -466,4 +466,11 @@ export class PostService {
   }
 
   constructor() { }
+
+  getPostItem(post_id: number): Posts | undefined {
+    
+    return this.postList.find((_post: Posts) => {
+      return _post.post_id === Number(post_id);
+    });
+  }
 }

@@ -14,15 +14,25 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let posts of postList">
+            <tr *ngFor="let posts of postList | slice: (pageIndex * pageSize): ((pageIndex * pageSize) + pageSize)">
                 <td>{{ posts.post_id }}</td>
                 <td>{{ posts.user_id }}</td>
                 <td>{{ posts.category_id }}</td>
                 <td>{{ posts.title }}</td>
-                <td><a routerLink="/post-details">Click here for content</a></td>
+                <td><button (click)="handleContentEvent(posts.post_id)">Content</button></td>
                 <td>{{ posts.viewCount }}</td>
                 <td>{{ posts.creation_date }}</td>
                 <td>{{ posts.is_published }}</td>
             </tr>
         </tbody>
+        </table>
 
+
+<div class="pagination-buttons">
+        <button type="button" (click)="handlePreviousPageButton()"
+        [disabled]="pageIndex === 0">Previous</button>
+        <button type="button" (click)="handleNextPageButton()"
+        [disabled]="pageIndex === totalPage -1">Next</button>
+    </div>
+
+    </div>

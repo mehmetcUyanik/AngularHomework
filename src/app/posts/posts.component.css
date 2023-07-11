@@ -19,3 +19,17 @@ table tbody td {
 table tbody td:first-child {
     width: 50px;
 }
+
+.pagination-buttons {
+    margin-top: 15px;
+    text-align: right;
+}
+
+.pagination-buttons button {
+    margin: 0 5px;
+}
+
+.pagination-buttons button:last-child{
+    margin-right: 0;
+}
+
