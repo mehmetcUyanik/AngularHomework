@@ -12,6 +12,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { CommentsComponent } from './comments/comments.component';
 import { HomeComponent } from './home/home.component';
 import { CreateUserComponent } from './users/create-user/create-user.component';
+import { CreatePostComponent } from './posts/create-post/create-post.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CreateUserComponent } from './users/create-user/create-user.component';
     CategoriesComponent,
     CommentsComponent,
     HomeComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,

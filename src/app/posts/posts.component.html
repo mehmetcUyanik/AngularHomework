@@ -34,5 +34,8 @@
         <button type="button" (click)="handleNextPageButton()"
         [disabled]="pageIndex === totalPage -1">Next</button>
     </div>
+    </div>
 
+    <div>
+        <app-button (onButtonClick)="routeCreatePost()" [buttonText]="'Click For Create Post'" [buttonType]="'primary'"></app-button>
     </div>

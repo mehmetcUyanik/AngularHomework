@@ -218,6 +218,10 @@ export class PostDetailsService {
   getPostContent(id: number):PostDetails{
     return this.postDetailsList.find((post) => post.post_id === id)!
   }
+
+  addNewPostDetails(newPostDetails: PostDetails): void {
+    this.postDetailsList.push(newPostDetails);
+  }
   
 
   constructor() { }

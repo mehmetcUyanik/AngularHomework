@@ -57,4 +57,8 @@ handleContentEvent(id : number) {
   this.router.navigateByUrl(`posts/${id}`);
 }
 
+routeCreatePost(){
+  this.router.navigateByUrl("/create-post");
+}
+
 }

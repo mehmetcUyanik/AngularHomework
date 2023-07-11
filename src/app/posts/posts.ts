@@ -6,4 +6,5 @@ export interface Posts {
     viewCount: number;
     creation_date: string;
     is_published: boolean;
+    content: string;
 }

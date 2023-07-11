@@ -1,0 +1,7 @@
+<div>
+    <input type="text" [(ngModel)]="newUserId" placeholder="Enter User ID">
+    <input type="text" [(ngModel)]="newCategoryId" placeholder="Enter Category ID">
+    <input type="text" [(ngModel)]="newTitle" placeholder="Enter Title">
+    <input type="text" [(ngModel)]="newContent" placeholder="Enter Content">
+</div>
+<app-button (onButtonClick)="handleCreatePost()" [buttonText]="'Create Post'" [buttonType]="'primary'"></app-button>

@@ -16,10 +16,9 @@ export class CreateUserComponent{
   
   constructor(private userService: UserService){
 
-    this.UserDatas = this.userService.getUserList()
+    this.UserDatas = this.userService.getUserList();
     
   }
-
 
   handleCreateUser(){
     this.userService.addNewUser({
