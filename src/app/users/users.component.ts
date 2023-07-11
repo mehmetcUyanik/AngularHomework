@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UserService } from './user.service';
 import { Users } from './user';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-users',
@@ -11,11 +13,20 @@ export class UsersComponent implements OnInit{
 
 userList: Users[]=[];
 
-constructor(private userService: UserService){}
+@Input() newUsername:string = "";
+@Input() newEmail:string = "";
+
+constructor(private userService: UserService, private Router: Router){}
 
 ngOnInit(): void {
 
   this.userList = this.userService.getUserList();
 }
 
+routeCreateUser(){
+  this.Router.navigateByUrl("/create-user");
 }
+
+
+}
+

@@ -18,5 +18,14 @@
                 <td>{{ users.creation_date }}</td>
                 <td>{{ users.is_active }}</td>
             </tr>
-        </tbody>         
+        </tbody>
+        
+        </table>
+        </div>
+        <div>
+            <app-button (onButtonClick)="routeCreateUser()" [buttonText]="'Click For Create User'" [buttonType]="'primary'"></app-button>
+        </div>
+
+        
+        
 

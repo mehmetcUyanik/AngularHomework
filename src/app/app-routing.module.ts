@@ -6,6 +6,7 @@ import { PostsComponent } from './posts/posts.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CommentsComponent } from './comments/comments.component';
 import { PostDetailsComponent } from './posts/post-details/post-details.component';
+import { CreateUserComponent } from './users/create-user/create-user.component';
 
 const routes: Routes= [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -14,7 +15,8 @@ const routes: Routes= [
   {path:'posts',component: PostsComponent},
   {path:'categories',component: CategoriesComponent},
   {path:'comments',component: CommentsComponent},
-  {path:'post-details',component: PostDetailsComponent}
+  {path:'post-details',component: PostDetailsComponent},
+  {path:'create-user',component: CreateUserComponent}
 ]
 
 @NgModule({
@@ -23,3 +25,4 @@ const routes: Routes= [
   ]
 })
 export class AppRoutingModule { }
+

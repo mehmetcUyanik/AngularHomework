@@ -63,6 +63,10 @@ export class UserService {
     getUserList(): Users[]{
       return this.userList;
     }
+
+    addNewUser(newUser: Users): void {
+      this.userList.push(newUser);
+    }
   
 
   constructor() { }

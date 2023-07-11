@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PostDetails } from './post-details';
+import { Posts } from '../posts';
 
 @Injectable({
   providedIn: 'root'
@@ -213,6 +214,7 @@ export class PostDetailsService {
   getPostDetailsList(): PostDetails[]{
     return this.postDetailsList;
   }
+
 
   
 
