@@ -527,4 +527,39 @@ export class PostService {
       return _post.post_id === Number(post_id);
     });
   }
+
+  updatePost(post: Posts, id: number){
+    for(let i=0;i<this.postList.length;i++){
+      if(this.postList[i].post_id === id){
+
+        this.postList[i]=post;
+
+      }
+
+    }
+  }
+
+  getPostContent(id: number):Posts{
+    return this.postList.find((post) => post.post_id === id)!
+  }
+
+  getPostById(id: number){
+
+    for(let posts of this.postList){
+      if(posts.post_id === id){
+        return posts;
+      }
+    }
+
+    return this.postList[0];
+  }
+
+  deletePost(id: number){
+    const postIndex = this.postList.findIndex((_post: Posts) => {
+      return _post.post_id === Number(id);
+    })
+    this.postList.splice(postIndex, 1);
+  }
+
+
 }

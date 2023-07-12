@@ -11,7 +11,7 @@ import { PostService } from '../post.service';
   styleUrls: ['./post-details.component.css']
 })
 export class PostDetailsComponent implements OnInit{
-postItem?: PostDetails;
+postItem?: Posts;
 
   postDetailsList: PostDetails[]=[];
 
@@ -22,7 +22,7 @@ postItem?: PostDetails;
     
     const params = this.route.snapshot.params;
     const postId = parseInt(params['id']);
-    this.postItem = this.postDetailsService.getPostContent(postId);
+    this.postItem = this.postService.getPostContent(postId);
     if (!this.postItem) {
       this.router.navigateByUrl('/posts');
     }

@@ -1,0 +1,8 @@
+.container{
+    display: inline-block;
+}
+
+.msg-success{
+    color:green;
+    font-size: 14px;
+}

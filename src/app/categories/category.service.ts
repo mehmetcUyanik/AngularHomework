@@ -23,7 +23,7 @@ export class CategoryService {
   },
 
   {
-    category_id: 2,
+    category_id: 3,
     category_name: "Home Design",
     creation_date: "2020-05-06",
     

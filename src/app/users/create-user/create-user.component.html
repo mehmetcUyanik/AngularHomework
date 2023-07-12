@@ -1,5 +1,8 @@
 <div>
     <input type="text" [(ngModel)]="newUsername" placeholder="Enter Username">
     <input type="text" [(ngModel)]="newEmail" placeholder="Enter E-mail">
+  </div>
+
+  <div>
     <app-button (onButtonClick)="handleCreateUser()" [buttonText]="'Create User'" [buttonType]="'primary'"></app-button>
   </div>

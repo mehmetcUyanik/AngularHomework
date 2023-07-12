@@ -1,7 +1,29 @@
-<div>
-    <input type="text" [(ngModel)]="newUserId" placeholder="Enter User ID">
-    <input type="text" [(ngModel)]="newCategoryId" placeholder="Enter Category ID">
-    <input type="text" [(ngModel)]="newTitle" placeholder="Enter Title">
-    <input type="text" [(ngModel)]="newContent" placeholder="Enter Content">
+<div class="container">
+    <div>
+        <label>Enter User ID: </label>
+        <input type="text" [(ngModel)]="newUserId" required #userid="ngModel" placeholder="Enter User ID">
 </div>
-<app-button (onButtonClick)="handleCreatePost()" [buttonText]="'Create Post'" [buttonType]="'primary'"></app-button>
+<div>
+    <label>Enter Category ID: </label>
+    <input type="text" [(ngModel)]="newCategoryId" required #categoryid="ngModel" placeholder="Enter Category ID">
+</div>
+<div>
+    <label>Enter Title: </label>
+    <input type="text" [(ngModel)]="newTitle" required #title="ngModel" placeholder="Enter Title">
+
+</div>
+<div>
+    <label>Enter Content: </label>
+    <input type="text" [(ngModel)]="newContent" required #content="ngModel" placeholder="Enter Content">
+</div>
+</div>
+
+<div>
+    <button type="button" [disabled]="userid.invalid || categoryid.invalid || title.invalid || content.invalid"
+     (click)="handleCreatePost()">Create Post</button>
+</div>
+
+<p class="msg-success" *ngIf="isSuccess">
+    New post was created successfully.
+</p>
+

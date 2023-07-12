@@ -15,6 +15,7 @@ const routes: Routes= [
   {path:'users',component: UsersComponent},
   {path:'posts',component: PostsComponent},
   {path:'posts/:id',component: PostDetailsComponent},
+  {path:'posts/:id/update',component: PostsComponent},
   {path:'categories',component: CategoriesComponent},
   {path:'comments',component: CommentsComponent},
   {path:'post-details',component: PostDetailsComponent},

@@ -7,10 +7,12 @@
                 <th>User ID</th>
                 <th>Category ID</th>
                 <th>Title</th>
-                <th>Content</th>
+                <th>Post Details</th>
                 <th>View Count</th>
                 <th>Creation Date</th>
                 <th>Is Published</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -19,13 +21,57 @@
                 <td>{{ posts.user_id }}</td>
                 <td>{{ posts.category_id }}</td>
                 <td>{{ posts.title }}</td>
-                <td><button (click)="handleContentEvent(posts.post_id)">Content</button></td>
+                <td><button (click)="handleContentEvent(posts.post_id)">Details</button></td>
                 <td>{{ posts.viewCount }}</td>
                 <td>{{ posts.creation_date }}</td>
                 <td>{{ posts.is_published }}</td>
+                <td><button type="button" (click)="handleEditPageButton(posts.post_id)">Edit</button></td>
+                <td><button type="button" (click)="handlePostDeleteButton(posts.post_id)">Delete</button></td>
             </tr>
         </tbody>
         </table>
+
+       <form *ngIf="editClick" [formGroup] ="postFormGroup"(ngSubmit)="updatePost(postFormGroup, id)">
+        <p>
+           Editing {{ id }}. post. 
+        </p>
+        <label for="post_id">Post ID
+        </label>
+<input type="text" formControlName="post_id">
+
+<label for="user_id">User ID
+</label>
+<input type="text" formControlName="user_id">
+
+<label for="category_id">Category ID
+</label>
+<input type="text" formControlName="category_id">
+
+<label for="title">Title
+</label>
+<input type="text" formControlName="title">
+
+<label for="content">Content
+</label>
+<input type="text" formControlName="content">
+
+<label for="viewCount">View Count
+</label>
+<input type="text" formControlName="viewCount">
+
+<label for="creation_date">Creation Date
+</label>
+<input type="text" formControlName="creation_date">
+
+<label for="is_published">Is Published
+</label>
+<input type="text" formControlName="is_published">
+
+<button type="submit">Edit Save</button>
+
+<button type="button" (click)="handleCancelButton()">Cancel</button>
+
+       </form>
 
 
 <div class="pagination-buttons">
