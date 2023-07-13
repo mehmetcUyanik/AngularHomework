@@ -1,0 +1,12 @@
+<div class="container">
+    <div>
+        <label>Enter Category Name: </label>
+        <input type="text" [(ngModel)]="newCategoryName" required #categoryid="ngModel" placeholder="Enter Category Name">
+</div>
+</div>
+
+<div>
+    <div>
+        <button type="button" [disabled]="categoryid.invalid" (click)="handleCreateCategory()">Create Category</button>
+    </div>
+</div>

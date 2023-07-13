@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Categories } from './categories';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -30,8 +31,41 @@ export class CategoryService {
   }
   ]
 
+  getCategoryById(id :number){
+    for(let categories of this.categoryList){
+      if(categories.category_id === id){
+        return categories;
+      }
+    }
+    return this.categoryList[0];
+  }
+
   getCategoryList(): Categories[]{
     return this.categoryList;
   }
+  
+  getCategoryContent(id: number):Categories{
+    return this.categoryList.find((category) => category.category_id === id)!
+  }
+
   constructor() { }
+
+  addNewCategory(newCategory: Categories): void {
+    this.categoryList.push(newCategory);
+  }
+
+  deleteCategory(id: number){
+    const categoryIndex = this.categoryList.findIndex((_category: Categories) => {
+      return _category.category_id === Number(id);
+    })
+    this.categoryList.splice(categoryIndex, 1);
+  }
+
+  updateCategory1(category: Categories, id: number){
+    for(let i=0;i<this.categoryList.length;i++){
+      if(this.categoryList[i].category_id === id){
+        this.categoryList[i]=category;
+      }
+    }
+  }
 }
