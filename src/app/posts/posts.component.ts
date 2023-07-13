@@ -101,7 +101,7 @@ updatePost(fg: FormGroup, id: number){
 
   let Post : Posts = fg.value;
 
-  this.postService.updatePost(Post,id);
+  this.postService.updatePost1(Post,id);
 
 console.log(fg);
 

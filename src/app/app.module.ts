@@ -13,6 +13,8 @@ import { CommentsComponent } from './comments/comments.component';
 import { HomeComponent } from './home/home.component';
 import { CreateUserComponent } from './users/create-user/create-user.component';
 import { CreatePostComponent } from './posts/create-post/create-post.component';
+import { CreateCategoryComponent } from './categories/create-category/create-category.component';
+import { CategoryDetailsComponent } from './categories/category-details/category-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { CreatePostComponent } from './posts/create-post/create-post.component';
     CommentsComponent,
     HomeComponent,
     CreateUserComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    CreateCategoryComponent,
+    CategoryDetailsComponent
   ],
   imports: [
     BrowserModule,

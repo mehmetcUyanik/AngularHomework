@@ -8,6 +8,8 @@
                 <th>E-mail</th>
                 <th>Creation Date</th>
                 <th>Is Active</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -17,11 +19,39 @@
                 <td>{{ users.email }}</td>
                 <td>{{ users.creation_date }}</td>
                 <td>{{ users.is_active }}</td>
+                <td><button type="button" (click)="handleEditButton(users.user_id)">Edit</button></td>
+                <td><button type="button" (click)="handleUserDeleteButton(users.user_id)">Delete</button></td>
             </tr>
         </tbody>
         
         </table>
         </div>
+
+        <form *ngIf="editClick" [formGroup]="userFormGroup"(ngSubmit)="updateUser(userFormGroup,id)">
+
+        <p>
+            Editing {{ id }}. user.
+        </p>
+        <label for="user_id">User ID</label>
+        <input type="text" formControlName="user_id">
+
+        <label for="username">Username</label>
+        <input type="text" formControlName="username">
+
+        <label for="email">E-mail</label>
+        <input type="text" formControlName="email">
+
+        <label for="creation_date">Creation Date</label>
+        <input type="text" formControlName="creation_date">
+
+        <label for="is_active">Is Active</label>
+        <input type="text" formControlName="is_active">
+
+        <button type="submit">Edit Save</button>
+
+        <button type="button" (click)="handleCancelButton()">Cancel</button>
+    </form>
+        
         <div>
             <app-button (onButtonClick)="routeCreateUser()" [buttonText]="'Click For Create User'" [buttonType]="'primary'"></app-button>
         </div>

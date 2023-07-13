@@ -528,7 +528,7 @@ export class PostService {
     });
   }
 
-  updatePost(post: Posts, id: number){
+  updatePost1(post: Posts, id: number){
     for(let i=0;i<this.postList.length;i++){
       if(this.postList[i].post_id === id){
 
