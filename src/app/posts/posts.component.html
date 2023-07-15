@@ -24,7 +24,7 @@
                 <td>{{ posts.viewCount }}</td>
                 <td>{{ posts.creation_date }}</td>
                 <td>{{ posts.is_published }}</td>
-                <td><button (click)="handleContentEvent(posts.post_id)">Details</button></td>
+                <td><button type="button" (click)="handleContentEvent(posts.post_id)">Details</button></td>
                 <td><button type="button" (click)="handleEditPageButton(posts.post_id)">Edit</button></td>
                 <td><button type="button" (click)="handlePostDeleteButton(posts.post_id)">Delete</button></td>
             </tr>

@@ -811,9 +811,33 @@ export class CommentService {
     }
   ]
 
+  constructor() { }
+
   getCommentList(): Comments[]{
     return this.commentList;
   }
 
-  constructor() { }
+  getCommentContent(id: number):Comments{
+    return this.commentList.find((comment) => comment.comment_id === id)!
+  }
+
+  addNewComment(newComment : Comments): void{
+    this.commentList.push(newComment);
+  }
+
+  deleteComment(id: number){
+    const commentIndex = this.commentList.findIndex((_comment: Comments) => {
+      return _comment.comment_id === Number(id);
+    })
+    this.commentList.splice(commentIndex, 1);
+  }
+
+  updateComment1(comment: Comments, id: number){
+    for(let i=0;i<this.commentList.length;i++){
+      if(this.commentList[i].comment_id === id){
+        this.commentList[i]=comment;
+      }
+    }
+  }
+
 }

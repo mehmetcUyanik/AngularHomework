@@ -13,6 +13,7 @@ export class CreateUserComponent{
   newUsername!: string;
   newEmail!: string;
   UserDatas: Users[]=[];
+  isSuccess: boolean = false;
   
   constructor(private userService: UserService){
 
@@ -27,10 +28,17 @@ export class CreateUserComponent{
     email: this.newEmail,
     creation_date: new Date().toISOString().slice(0,10),
     is_active: true
-
 })
 
-console.log(this.userService.getUserList());
+this.newUsername="";
+this.newEmail="";
+
+this.isSuccess = true;
+
+setTimeout(() => {
+  this.isSuccess = false;
+},2000);
+
 
 } 
 }

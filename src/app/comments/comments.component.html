@@ -1,3 +1,4 @@
+
 <div class="table-container">
 
     <table>
@@ -9,6 +10,9 @@
                 <th>Comment</th>
                 <th>Creation Date</th>
                 <th>Is Confirmed</th>
+                <th>Comment Details</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -19,9 +23,41 @@
                 <td>{{ comments.comment }}</td>
                 <td>{{ comments.creation_date }}</td>
                 <td>{{ comments.is_confirmed }}</td>
+                <td><button type="button" (click)="handleContentEvent(comments.comment_id)">Details</button></td>
+                <td><button type="button" (click)="handleEditPageButton(comments.comment_id)">Edit</button></td>
+                <td><button type="button" (click)="handleCommentDeleteButton(comments.comment_id)">Delete</button></td>
+
             </tr>
         </tbody>   
         </table>
+        
+
+        <form *ngIf="editClick" [formGroup]="commentFormGroup"(ngSubmit)="updateComment(commentFormGroup,id)">
+
+        <p>
+            Editing {{ id }}. comment.
+        </p>
+        <label for="comment_id">Comment ID</label>
+<input type="text" formControlName="comment_id">
+
+<label for="post_id">Post ID</label>
+<input type="text" formControlName="post_id">
+
+<label for="user_id">User ID</label>
+<input type="text" formControlName="user_id">
+
+<label for="comment">Comment</label>
+<input type="text" formControlName="comment">
+
+<label for="creation_date">Creation Date</label>
+<input type="text" formControlName="creation_date">
+
+<label for="is_confirmed">Is Confirmed</label>
+<input type="text" formControlName="is_confirmed">
+<button type="submit">Edit Save</button>
+<button type="button" (click)="handleCancelButton()">Cancel</button>
+</form>
+
 
     <div>
         <div class="pagination-buttons">
@@ -31,6 +67,11 @@
             [disabled]="pageIndex === totalPage -1">Next</button>
         </div>
     </div>
+
+</div>
+
+    <div>
+        <app-button (onButtonClick)="routeCreateComment()" [buttonText]="'Click For Create Comments'" [buttonType]="'primary'"></app-button>
         </div>
         
         

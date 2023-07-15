@@ -10,6 +10,8 @@ import { CreateUserComponent } from './users/create-user/create-user.component';
 import { CreatePostComponent } from './posts/create-post/create-post.component';
 import { CreateCategoryComponent } from './categories/create-category/create-category.component';
 import { CategoryDetailsComponent } from './categories/category-details/category-details.component';
+import { CreateCommentComponent } from './comments/create-comment/create-comment.component';
+import { CommentDetailsComponent } from './comments/comment-details/comment-details.component';
 
 const routes: Routes= [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -24,7 +26,11 @@ const routes: Routes= [
   {path:'post-details',component: PostDetailsComponent},
   {path:'create-user',component: CreateUserComponent},
   {path:'create-post',component: CreatePostComponent},
-  {path:'create-category',component: CreateCategoryComponent}
+  {path:'create-category',component: CreateCategoryComponent},
+  {path:'create-comment', component: CreateCommentComponent},
+  {path:'comment-details', component: CommentDetailsComponent},
+  {path:'comments/:id',component: CommentDetailsComponent}
+
 ]
 
 @NgModule({

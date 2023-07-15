@@ -13,7 +13,6 @@ export class PostsComponent implements OnInit{
 
   postList: Posts[]=[];
 
-  selectedPost: Posts;
 
   pageIndex: number = 0;
   pageSize: number = 10;
@@ -32,17 +31,16 @@ export class PostsComponent implements OnInit{
       this.pageIndex =parseInt( queryParams['p']);
      }
 
-     this.selectedPost=this.postService.getPostById(this.id);
 
      this.postFormGroup = fb.group({
-      'post_id':0,
-      'user_id':0,
-      'category_id':0,
-      'title':"",
-      'viewCount':0,
-      'creation_date':"",
-      'is_published':false,
-      'content':""
+      'post_id':undefined,
+      'user_id':undefined,
+      'category_id':undefined,
+      'title':undefined,
+      'viewCount':undefined,
+      'creation_date':undefined,
+      'is_published':undefined,
+      'content':undefined
       
      })
     }
@@ -87,7 +85,6 @@ handleEditPageButton(id: number){
 
   this.editClick = !this.editClick;
   this.id = id;
-  this.selectedPost=this.postService.getPostContent(this.id);
   
 }
 

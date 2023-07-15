@@ -5,8 +5,12 @@
 </div>
 </div>
 
-<div>
+
     <div>
         <button type="button" [disabled]="categoryid.invalid" (click)="handleCreateCategory()">Create Category</button>
     </div>
-</div>
+
+    <p class="msg-success" *ngIf="isSuccess">
+        New category was created successfully.
+    </p>
+

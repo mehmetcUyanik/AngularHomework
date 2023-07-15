@@ -511,11 +511,11 @@ export class PostService {
     }
   ]
 
+  constructor() { }
+
   getPostList(): Posts[]{
     return this.postList;
   }
-
-  constructor() { }
 
   addNewPost(newPost: Posts): void {
     this.postList.push(newPost);
@@ -533,25 +533,12 @@ export class PostService {
       if(this.postList[i].post_id === id){
 
         this.postList[i]=post;
-
       }
-
     }
   }
 
   getPostContent(id: number):Posts{
     return this.postList.find((post) => post.post_id === id)!
-  }
-
-  getPostById(id: number){
-
-    for(let posts of this.postList){
-      if(posts.post_id === id){
-        return posts;
-      }
-    }
-
-    return this.postList[0];
   }
 
   deletePost(id: number){

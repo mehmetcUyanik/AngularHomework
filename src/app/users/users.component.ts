@@ -17,29 +17,24 @@ userList: Users[]=[];
 
 @Input() newUsername:string = "";
 @Input() newEmail:string = "";
-
+editClick: boolean=false;
+id: number=0;
 userFormGroup: FormGroup;
 
 constructor(private userService: UserService,
    private Router: Router,
    fb: FormBuilder){
 
-  this.selectedUser=this.userService.getUserById(this.id);
+  
 
   this.userFormGroup = fb.group({
-    'user_id':0,
-    'username':"",
-    'email':"",
-    'creation_date':"",
-    'is_active':true
+    'user_id':undefined,
+    'username':undefined,
+    'email':undefined,
+    'creation_date':undefined,
+    'is_active':undefined
   })
 }
-
-editClick: boolean=false;
-id: number=0;
-
-selectedUser: Users;
-
 
 ngOnInit(): void {
 
@@ -63,7 +58,6 @@ handleUserDeleteButton(id: number){
 handleEditButton(id: number){
   this.editClick=!this.editClick;
   this.id=id;
-  this.selectedUser=this.userService.getUserContent(this.id);
 }
 
 updateUser(fg: FormGroup, id: number){

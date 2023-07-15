@@ -59,6 +59,7 @@ export class UserService {
       }
     ]
 
+    constructor() { }
 
     getUserList(): Users[]{
       return this.userList;
@@ -75,20 +76,6 @@ export class UserService {
       this.userList.splice(userIndex, 1);
     }
 
-    getUserContent(id: number):Users{
-      return this.userList.find((user) => user.user_id===id)!
-    }
-
-    getUserById(id:number){
-      for(let users of this.userList){
-        if(users.user_id === id){
-          return users;
-        }
-      }
-
-      return this.userList[0];
-    }
-
     updateUser1(user: Users, id:number){
       for(let i=0;i<this.userList.length;i++){
         if(this.userList[i].user_id === id){
@@ -97,6 +84,4 @@ export class UserService {
       }
     }
   
-
-  constructor() { }
 }

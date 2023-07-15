@@ -3,7 +3,7 @@ import { Posts } from '../posts';
 import { PostService } from '../post.service';
 import { PostDetails } from '../post-details/post-details';
 import { PostDetailsService } from '../post-details/post-details.service';
-import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-create-post',
@@ -12,18 +12,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CreatePostComponent {
 
-  postItem?: Posts;
+ 
   PostDatas: Posts[]=[];
   PostDetails: PostDetails[]=[];
-  postId?: number;
 
   constructor(private postService: PostService,
-    private postDetailsService : PostDetailsService,
-    private route: ActivatedRoute,
-    private router: Router){
-
-
-    this.resetForm();
+    private postDetailsService : PostDetailsService
+    ){
     this.PostDatas= this.postService.getPostList();
     this.PostDetails=this.postDetailsService.getPostDetailsList();
   }
@@ -32,27 +27,7 @@ export class CreatePostComponent {
   newContent!: string;
   newUserId!: number;
   newCategoryId!: number;
-
   isSuccess: boolean = false;
-
- 
-  private resetForm(){
-    
-    this.postItem = {
-      post_id:0,
-      user_id:0,
-      category_id:0,
-      title:"",
-      viewCount:0,
-      creation_date:"",
-      is_published:true,
-      content:""
-    }
-
-    setTimeout(() => {
-      this.isSuccess = false;
-    },2000);
-  }
 
    handleCreatePost(){
    this.postService.addNewPost({
@@ -71,10 +46,15 @@ this.postDetailsService.addNewPostDetails({
   content:this.newContent
 })
 
+this.newUserId=0;
+this.newCategoryId=0; 
+this.newTitle="";
+this.newContent="";
+
 this.isSuccess = true;
-this.resetForm();
+
+setTimeout(() => {
+  this.isSuccess = false;
+},2000);
   }
-
-  
-
 }

@@ -20,8 +20,8 @@ export class CategoryDetailsComponent implements OnInit{
     private router: Router){
 
     const params = this.route.snapshot.params;
-    const postId = parseInt(params['id']);
-    this.categoryItem = this.categoryService.getCategoryContent(postId);
+    const categoryId = parseInt(params['id']);
+    this.categoryItem = this.categoryService.getCategoryContent(categoryId);
     if (!this.categoryItem) {
       this.router.navigateByUrl('/categories');
     }

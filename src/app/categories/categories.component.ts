@@ -12,9 +12,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class CategoriesComponent implements OnInit{
 
   categoryList: Categories[]=[];
-
-  selectedCategory!: Categories;  
-
+ 
 
   id: number=0;
   pageIndex: number = 0;
@@ -31,12 +29,10 @@ export class CategoriesComponent implements OnInit{
        this.pageIndex =parseInt( queryParams['p']);
       }
 
-      this.selectedCategory=this.categoryService.getCategoryById(this.id);
-
       this.categoryFormGroup = fb.group({
-        'category_id':0,
-        'category_name':"",
-        'creation_date':""
+        'category_id':undefined,
+        'category_name':undefined,
+        'creation_date':undefined
       })
 
 
@@ -67,7 +63,6 @@ export class CategoriesComponent implements OnInit{
   handleEditPageButton(id: number){
     this.editClick = !this.editClick;
     this.id = id;
-    this.selectedCategory=this.categoryService.getCategoryContent(this.id);
   }
 
   handleCancelButton(){

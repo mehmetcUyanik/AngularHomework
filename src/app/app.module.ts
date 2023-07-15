@@ -15,6 +15,8 @@ import { CreateUserComponent } from './users/create-user/create-user.component';
 import { CreatePostComponent } from './posts/create-post/create-post.component';
 import { CreateCategoryComponent } from './categories/create-category/create-category.component';
 import { CategoryDetailsComponent } from './categories/category-details/category-details.component';
+import { CreateCommentComponent } from './comments/create-comment/create-comment.component';
+import { CommentDetailsComponent } from './comments/comment-details/comment-details.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { CategoryDetailsComponent } from './categories/category-details/category
     CreateUserComponent,
     CreatePostComponent,
     CreateCategoryComponent,
-    CategoryDetailsComponent
+    CategoryDetailsComponent,
+    CreateCommentComponent,
+    CommentDetailsComponent
   ],
   imports: [
     BrowserModule,

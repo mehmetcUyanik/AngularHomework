@@ -31,14 +31,7 @@ export class CategoryService {
   }
   ]
 
-  getCategoryById(id :number){
-    for(let categories of this.categoryList){
-      if(categories.category_id === id){
-        return categories;
-      }
-    }
-    return this.categoryList[0];
-  }
+  constructor() { }
 
   getCategoryList(): Categories[]{
     return this.categoryList;
@@ -48,7 +41,6 @@ export class CategoryService {
     return this.categoryList.find((category) => category.category_id === id)!
   }
 
-  constructor() { }
 
   addNewCategory(newCategory: Categories): void {
     this.categoryList.push(newCategory);

@@ -6,3 +6,7 @@
   <div>
     <app-button (onButtonClick)="handleCreateUser()" [buttonText]="'Create User'" [buttonType]="'primary'"></app-button>
   </div>
+
+  <p class="msg-success" *ngIf="isSuccess">
+    New user was created successfully.
+</p>

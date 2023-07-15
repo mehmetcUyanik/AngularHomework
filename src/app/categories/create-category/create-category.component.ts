@@ -9,6 +9,8 @@ import { Categories } from '../categories';
 })
 export class CreateCategoryComponent {
 
+  
+
   constructor(private categoryService: CategoryService){
 
     this.CategoryDatas = this.categoryService.getCategoryList();
@@ -16,14 +18,22 @@ export class CreateCategoryComponent {
 
   newCategoryName!: string;
   CategoryDatas: Categories[]=[];
-
+  isSuccess: boolean = false;
+  
   handleCreateCategory(){
     this.categoryService.addNewCategory({
     category_id: this.CategoryDatas.length +1,
     category_name: this.newCategoryName,
     creation_date: new Date().toISOString().slice(0,10),
-  
  })
+
+ this.newCategoryName="";
+
+ this.isSuccess = true;
+
+setTimeout(() => {
+  this.isSuccess = false;
+},2000);
 
 }
 }
