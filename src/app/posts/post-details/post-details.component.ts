@@ -21,6 +21,10 @@ categoryItem?: Categories;
 
   postDetailsList: PostDetails[]=[];
 
+/*
+Gönderi detaylarına erişmek için categoryService, userService, postService tanımlandı ve id'ye göre gönderi detayları listelendi.
+*/
+
   constructor(private postDetailsService: PostDetailsService,
     private userService: UserService,
     private categoryService: CategoryService,

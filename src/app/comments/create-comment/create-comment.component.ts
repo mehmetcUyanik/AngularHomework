@@ -9,6 +9,11 @@ import { Comments } from '../comments';
 })
 export class CreateCommentComponent {
 
+
+/*
+Yeni yorum oluşturmak için method eklendi.
+*/
+
   CommentDatas: Comments[]=[];
   newPostId!: number;
   newUserId!: number;

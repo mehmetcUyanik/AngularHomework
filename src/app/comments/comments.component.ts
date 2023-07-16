@@ -11,6 +11,17 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class CommentsComponent implements OnInit{
 
+/*
+Yorum detayları "comment-details" sayfasında listelendi.
+Edit kısmında tıklanan yorumun bilgilerini değiştirmek için "FormBuilder" yapısı kullanıldı.
+Create Comment sayfasına yönlendirmek için "Router" yapısı kullanıldı.
+Yeni yorum oluşturma işlemi "create-comment" sayfasında tanımlandı.
+Delete, Edit ve Update fonksiyonları için methodlar eklendi.
+Tablo verileri en fazla 10 satır gösterilecek şekilde düzenlendi ve "handlePreviousPageButton",
+"handleNextPageButton" methodları ile tabloda dolaşım sağlandı.
+*/
+
+
   commentList: Comments[]=[];
 
   id:number=0;
@@ -25,11 +36,7 @@ export class CommentsComponent implements OnInit{
     private router: Router,
     fb: FormBuilder
     ){
-     const queryParams = this.route.snapshot.queryParams;
-     if(queryParams['p'] !== undefined){
-      this.pageIndex =parseInt( queryParams['p']);
-     }
-
+     
      this.commentFormGroup = fb.group({
       'comment_id':undefined,
       'post_id':undefined,

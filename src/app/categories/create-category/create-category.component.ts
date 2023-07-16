@@ -9,6 +9,9 @@ import { Categories } from '../categories';
 })
 export class CreateCategoryComponent {
 
+/*
+Yeni kategori oluşturmak için method eklendi.
+*/
   
 
   constructor(private categoryService: CategoryService){

@@ -12,6 +12,11 @@ import { PostDetailsService } from '../post-details/post-details.service';
 })
 export class CreatePostComponent {
 
+/*
+Yeni gönderi oluşturmak için method eklendi. Oluşturulan gönderi bilgileri "post-details"'a 
+postDetailsService ile gönderildi.
+*/
+
  
   PostDatas: Posts[]=[];
   PostDetails: PostDetails[]=[];

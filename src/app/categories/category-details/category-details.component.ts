@@ -10,6 +10,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CategoryDetailsComponent implements OnInit{
 
+/*
+Kategori detaylarına erişmek için categoryService tanımlandı ve id'ye göre kategori detayları listelendi.
+Kategorilerde bulunan gönderi sayısını bulmak için "getPostCount" methodu ile seçilen kategoride kaç tane
+gönderi olduğu bulundu ve listelendi.
+*/
+
 
   categoryItem?: Categories;
 

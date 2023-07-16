@@ -10,6 +10,10 @@ import { Users } from '../user';
 })
 export class CreateUserComponent{
 
+/*
+Yeni kullanıcı oluşturmak için method eklendi.
+*/
+
   newUsername!: string;
   newEmail!: string;
   UserDatas: Users[]=[];

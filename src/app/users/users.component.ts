@@ -12,6 +12,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class UsersComponent implements OnInit{
 
+
+/*
+Edit kısmında tıklanan kullanıcının bilgilerini değiştirmek için "FormBuilder" yapısı kullanıldı.
+Create User sayfasına yönlendirmek için "Router" yapısı kullanıldı.
+Yeni kullanıcı oluşturma işlemi "create-user" sayfasında tanımlandı.
+Delete, Edit ve Update fonksiyonları için methodlar eklendi.
+*/
+
 userList: Users[]=[];
 
 editClick: boolean=false;

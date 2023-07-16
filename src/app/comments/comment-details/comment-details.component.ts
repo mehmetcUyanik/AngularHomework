@@ -14,6 +14,10 @@ import { UserService } from 'src/app/users/user.service';
 })
 export class CommentDetailsComponent implements OnInit{
 
+/*
+Yorum detaylarına erişmek için commentService, userService, postService tanımlandı ve id'ye göre yorum detayları listelendi.
+*/
+
   commentItem?: Comments;
   userItem?: Users;
   postItem?: Posts;

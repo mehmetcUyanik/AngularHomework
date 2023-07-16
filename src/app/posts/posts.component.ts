@@ -11,6 +11,16 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class PostsComponent implements OnInit{
 
+/*
+Gönderi detayları "post-details" sayfasında listelendi.
+Edit kısmında tıklanan yorumun bilgilerini değiştirmek için "FormBuilder" yapısı kullanıldı.
+Create Post sayfasına yönlendirmek için "Router" yapısı kullanıldı.
+Yeni gönderi oluşturma işlemi "create-post" sayfasında tanımlandı.
+Delete, Edit ve Update fonksiyonları için methodlar eklendi.
+Tablo verileri en fazla 10 satır gösterilecek şekilde düzenlendi ve "handlePreviousPageButton",
+"handleNextPageButton" methodları ile tabloda dolaşım sağlandı.
+*/
+
   postList: Posts[]=[];
 
 
@@ -26,11 +36,6 @@ export class PostsComponent implements OnInit{
     private router: Router,
     fb: FormBuilder){
       
-     const queryParams = this.route.snapshot.queryParams;
-     if(queryParams['p'] !== undefined){
-      this.pageIndex =parseInt( queryParams['p']);
-     }
-
 
      this.postFormGroup = fb.group({
       'post_id':undefined,

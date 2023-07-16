@@ -11,11 +11,19 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class CategoriesComponent implements OnInit{
 
+/*
+Kategori detayları "category-details" sayfasında listelendi.
+Edit kısmında tıklanan kategorinin bilgilerini değiştirmek için "FormBuilder" yapısı kullanıldı.
+Create Category sayfasına yönlendirmek için "Router" yapısı kullanıldı.
+Yeni kategori oluşturma işlemi "create-category" sayfasında tanımlandı.
+Delete, Edit ve Update fonksiyonları için methodlar eklendi.
+*/
+
+
   categoryList: Categories[]=[];
  
-
   id: number=0;
-  pageIndex: number = 0;
+  
   editClick: boolean=false;
   categoryFormGroup: FormGroup;
 
@@ -24,18 +32,12 @@ export class CategoriesComponent implements OnInit{
     private Router:Router,
     fb: FormBuilder){
 
-      const queryParams = this.route.snapshot.queryParams;
-      if(queryParams['p'] !== undefined){
-       this.pageIndex =parseInt( queryParams['p']);
-      }
 
       this.categoryFormGroup = fb.group({
         'category_id':undefined,
         'category_name':undefined,
         'creation_date':undefined
       })
-
-
     }
 
   ngOnInit(): void {
