@@ -3,27 +3,34 @@
         <label>Enter User ID: </label>
         <input type="text" [(ngModel)]="newUserId" required #userid="ngModel" placeholder="Enter User ID">
 </div>
+<br>
 <div>
     <label>Enter Category ID: </label>
     <input type="text" [(ngModel)]="newCategoryId" required #categoryid="ngModel" placeholder="Enter Category ID">
 </div>
+<br>
 <div>
     <label>Enter Title: </label>
     <input type="text" [(ngModel)]="newTitle" required #title="ngModel" placeholder="Enter Title">
 
 </div>
+<br>
 <div>
     <label>Enter Content: </label>
     <input type="text" [(ngModel)]="newContent" required #content="ngModel" placeholder="Enter Content">
 </div>
-</div>
+
+
+<br>
 
 <div>
-    <button type="button" [disabled]="userid.invalid || categoryid.invalid || title.invalid || content.invalid"
+    <button type="button" class="buttons" [disabled]="userid.invalid || categoryid.invalid || title.invalid || content.invalid"
      (click)="handleCreatePost()">Create Post</button>
 </div>
 
 <p class="msg-success" *ngIf="isSuccess">
-    New post was created successfully.
+    New post is created successfully.
 </p>
+
+</div>
 

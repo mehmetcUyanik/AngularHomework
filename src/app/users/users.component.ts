@@ -14,9 +14,6 @@ export class UsersComponent implements OnInit{
 
 userList: Users[]=[];
 
-
-@Input() newUsername:string = "";
-@Input() newEmail:string = "";
 editClick: boolean=false;
 id: number=0;
 userFormGroup: FormGroup;
@@ -24,8 +21,6 @@ userFormGroup: FormGroup;
 constructor(private userService: UserService,
    private Router: Router,
    fb: FormBuilder){
-
-  
 
   this.userFormGroup = fb.group({
     'user_id':undefined,
@@ -64,6 +59,8 @@ updateUser(fg: FormGroup, id: number){
   let User : Users = fg.value;
 
   this.userService.updateUser1(User,id);
+
+  this.editClick = !this.editClick;
 }
 
 handleCancelButton(){

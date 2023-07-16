@@ -1,16 +1,127 @@
 <ul>
     <li>
+        <u><h2>Comment Info</h2></u>
+    </li>
+<br>
+    <li>
         <strong>
-            Comment ID
+            Comment ID : 
         </strong>
 
         {{ commentItem?.comment_id }}
     </li>
+    <br>
     <li>
         <strong>
-            Comment
+            Comment : 
         </strong>
 
         {{ commentItem?.comment }}
     </li>
+    <br>
+    <li>
+        <strong>
+            Creation Date : 
+        </strong>
+
+        {{ commentItem?.creation_date }}
+    </li>
+    <br>
+    <li>
+        <strong>
+            Is Confirmed : 
+        </strong>
+
+        {{ commentItem?.is_confirmed }}
+    </li>
+    <br>
+    <li>
+        <u><h2>User Info</h2></u>
+    </li>
+    <br>
+    <li>
+        <strong>
+            User ID : 
+        </strong>
+
+        {{ userItem?.user_id }}
+    </li>
+        <br>
+    <li>
+        <strong>
+            Username : 
+        </strong>
+
+        {{ userItem?.username }}
+    </li>
+        <br>
+    <li>
+        <strong>
+            E-mail : 
+        </strong>
+
+        {{ userItem?.email }}
+    </li>
+        <br>
+    <li>
+        <strong>
+            Creation Date : 
+        </strong>
+
+        {{ userItem?.creation_date }}
+    </li>
+        <br>
+    <li>
+        <strong>
+            Is Active : 
+        </strong>
+
+        {{ userItem?.is_active }}
+    </li>
+        <br>
+    <li>
+        <u><h2>Post Info</h2></u>
+    </li>
+    <br>
+    <li>
+        <strong>
+            Post ID : 
+        </strong>
+
+        {{ postItem?.post_id }}
+    </li>
+        <br>
+        <li>
+            <strong>
+                Title : 
+            </strong>
+    
+            {{ postItem?.title }}
+        </li>
+            <br>
+            <li>
+                <strong>
+                    View Count : 
+                </strong>
+        
+                {{ postItem?.viewCount }}
+            </li>
+                <br>
+                <li>
+                    <strong>
+                        Creation Date : 
+                    </strong>
+            
+                    {{ postItem?.creation_date }}
+                </li>
+                    <br>
+                    <li>
+                        <strong>
+                            Is Published : 
+                        </strong>
+                
+                        {{ postItem?.is_published }}
+                    </li>
+
+
 </ul>

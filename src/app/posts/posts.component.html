@@ -24,64 +24,69 @@
                 <td>{{ posts.viewCount }}</td>
                 <td>{{ posts.creation_date }}</td>
                 <td>{{ posts.is_published }}</td>
-                <td><button type="button" (click)="handleContentEvent(posts.post_id)">Details</button></td>
-                <td><button type="button" (click)="handleEditPageButton(posts.post_id)">Edit</button></td>
-                <td><button type="button" (click)="handlePostDeleteButton(posts.post_id)">Delete</button></td>
+                <td><button type="button" class="buttons" (click)="handleContentEvent(posts.post_id)">Details</button></td>
+                <td><button type="button" class="buttons" (click)="handleEditPageButton(posts.post_id)">Edit</button></td>
+                <td><button type="button" class="buttons" (click)="handlePostDeleteButton(posts.post_id)">Delete</button></td>
             </tr>
         </tbody>
         </table>
-
+        
+        <div class="edit">
        <form *ngIf="editClick" [formGroup] ="postFormGroup"(ngSubmit)="updatePost(postFormGroup, id)">
         <p>
            Editing {{ id }}. post. 
-        </p>
-        <label for="post_id">Post ID
+        </p><br>
+        <label for="post_id">Post ID : 
         </label>
-<input type="text" formControlName="post_id">
+<input type="text" formControlName="post_id"><br><br>
 
-<label for="user_id">User ID
+<label for="user_id">User ID : 
 </label>
-<input type="text" formControlName="user_id">
+<input type="text" formControlName="user_id"><br><br>
 
-<label for="category_id">Category ID
+<label for="category_id">Category ID : 
 </label>
-<input type="text" formControlName="category_id">
+<input type="text" formControlName="category_id"><br><br>
 
-<label for="title">Title
+<label for="title">Title : 
 </label>
-<input type="text" formControlName="title">
+<input type="text" formControlName="title"><br><br>
 
-<label for="content">Content
+<label for="content">Content : 
 </label>
-<input type="text" formControlName="content">
+<input type="text" formControlName="content"><br><br>
 
-<label for="viewCount">View Count
+<label for="viewCount">View Count : 
 </label>
-<input type="text" formControlName="viewCount">
+<input type="text" formControlName="viewCount"><br><br>
 
-<label for="creation_date">Creation Date
+<label for="creation_date">Creation Date : 
 </label>
-<input type="text" formControlName="creation_date">
+<input type="text" formControlName="creation_date"><br><br>
 
-<label for="is_published">Is Published
+<label for="is_published">Is Published : 
 </label>
-<input type="text" formControlName="is_published">
+<input type="text" formControlName="is_published"><br><br>
 
-<button type="submit">Edit Save</button>
+<button type="submit" class="buttons">Edit Save</button>
 
-<button type="button" (click)="handleCancelButton()">Cancel</button>
+<br><br>
+
+<button type="button" class="buttons" (click)="handleCancelButton()">Cancel</button>
 
        </form>
+    </div>
 
 
 <div class="pagination-buttons">
-        <button type="button" (click)="handlePreviousPageButton()"
+        <button type="button" class="buttons" (click)="handlePreviousPageButton()"
         [disabled]="pageIndex === 0">Previous</button>
-        <button type="button" (click)="handleNextPageButton()"
+        <button type="button" class="buttons" (click)="handleNextPageButton()"
         [disabled]="pageIndex === totalPage -1">Next</button>
     </div>
     </div>
 
     <div>
-        <app-button (onButtonClick)="routeCreatePost()" [buttonText]="'Click For Create Post'" [buttonType]="'primary'"></app-button>
+        <app-button class="app-button" (onButtonClick)="routeCreatePost()" [buttonText]="'Create Post'"
+         [buttonType]="'primary'"></app-button>
     </div>

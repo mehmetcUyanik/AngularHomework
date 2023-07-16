@@ -16,34 +16,34 @@
                 <td>{{ categories.category_id }}</td>
                 <td>{{ categories.category_name }}</td>
                 <td>{{ categories.creation_date }}</td>
-                <td><button type="button" (click)="handleContentEvent(categories.category_id)">Details</button></td>
-                <td><button type="button" (click)="handleEditPageButton(categories.category_id)">Edit</button></td>
-                <td><button type="button" (click)="handleCategoryDeleteButton(categories.category_id)">Delete</button></td>
+                <td><button type="button" class="buttons" (click)="handleContentEvent(categories.category_id)">Details</button></td>
+                <td><button type="button" class="buttons" (click)="handleEditPageButton(categories.category_id)">Edit</button></td>
+                <td><button type="button" class="buttons" (click)="handleCategoryDeleteButton(categories.category_id)">Delete</button></td>
             </tr>
         </tbody> 
     </table>
+</div>
+<div class="edit">
+
 <form *ngIf="editClick" [formGroup]="categoryFormGroup"(ngSubmit)="updateCategory(categoryFormGroup,id)">
 <p>
     Editing {{ id }}. category.
-</p>
-<label for="category_id">Category ID</label>
-<input type="text" formControlName="category_id">
+</p><br>
+<label for="category_id">Category ID : </label>
+<input type="text" formControlName="category_id"><br><br>
 
-<label for="category_name">Category Name</label>
-<input type="text" formControlName="category_name">
+<label for="category_name">Category Name : </label>
+<input type="text" formControlName="category_name"><br><br>
 
-<label for="creation_date">Creation Date</label>
-<input type="text" formControlName="creation_date">
+<label for="creation_date">Creation Date : </label>
+<input type="text" formControlName="creation_date"><br><br>
 
-<button type="submit">Edit Save</button>
-<button type="button" (click)="handleCancelButton()">Cancel</button>
+<button type="submit" class="buttons">Edit Save</button><br><br>
+<button type="button" class="buttons" (click)="handleCancelButton()">Cancel</button>
 </form>
-
-
 </div>
 
-<div>
-    <div>
-        <app-button (onButtonClick)="routeCreateCategory()" [buttonText]="'Click For Create Category'" [buttonType]="'primary'"></app-button>
+
+    <div class="app-button">
+        <app-button (onButtonClick)="routeCreateCategory()" [buttonText]="'Create Category'" [buttonType]="'primary'"></app-button>
     </div>
-</div>

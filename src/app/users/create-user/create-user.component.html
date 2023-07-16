@@ -1,12 +1,23 @@
-<div>
-    <input type="text" [(ngModel)]="newUsername" placeholder="Enter Username">
-    <input type="text" [(ngModel)]="newEmail" placeholder="Enter E-mail">
-  </div>
+<div class="container">
 
   <div>
-    <app-button (onButtonClick)="handleCreateUser()" [buttonText]="'Create User'" [buttonType]="'primary'"></app-button>
+    <label>Enter Username: </label>
+    <input type="text" [(ngModel)]="newUsername" required #username="ngModel" placeholder="Enter Username">
+</div>
+<br>
+<div>
+<label>Enter Email: </label>
+<input type="text" [(ngModel)]="newEmail" required #email="ngModel" placeholder="Enter Email">
+</div>
+<br>
+
+  <div>
+    <button type="button" class="buttons" [disabled]="username.invalid || email.invalid"
+     (click)="handleCreateUser()">Create User</button>
   </div>
 
   <p class="msg-success" *ngIf="isSuccess">
-    New user was created successfully.
+    New user is created successfully.
 </p>
+
+</div>

@@ -61,6 +61,10 @@ export class UserService {
 
     constructor() { }
 
+    getUserContent(id: number):Users{
+      return this.userList.find((user) => user.user_id === id)!
+    }
+
     getUserList(): Users[]{
       return this.userList;
     }

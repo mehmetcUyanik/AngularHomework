@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Categories } from './categories';
+import { PostService } from 'src/app/posts/post.service';
 
 
 @Injectable({
@@ -31,7 +32,7 @@ export class CategoryService {
   }
   ]
 
-  constructor() { }
+  constructor(private postService: PostService) { }
 
   getCategoryList(): Categories[]{
     return this.categoryList;
@@ -59,5 +60,10 @@ export class CategoryService {
         this.categoryList[i]=category;
       }
     }
+  }
+
+  getPostCount(categoryId: number): number {
+
+    return this.postService.getPostCountByCategory(categoryId);
   }
 }

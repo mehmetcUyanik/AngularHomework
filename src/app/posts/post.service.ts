@@ -548,5 +548,11 @@ export class PostService {
     this.postList.splice(postIndex, 1);
   }
 
+  getPostCountByCategory(categoryId: number): number {
+    const postsByCategory = this.postList.filter(post => post.category_id === categoryId).length;
+    return postsByCategory;
+   
+  }
+
 
 }

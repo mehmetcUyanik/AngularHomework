@@ -74,6 +74,8 @@ export class CategoriesComponent implements OnInit{
     let Category : Categories = fg.value;
 
     this.categoryService.updateCategory1(Category, id);
+
+    this.editClick = !this.editClick;
   }
 
 }

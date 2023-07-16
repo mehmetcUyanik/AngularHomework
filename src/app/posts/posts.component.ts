@@ -100,7 +100,7 @@ updatePost(fg: FormGroup, id: number){
 
   this.postService.updatePost1(Post,id);
 
-console.log(fg);
+  this.editClick = !this.editClick;
 
 }
 

@@ -1,16 +1,18 @@
 <div class="container">
     <div>
         <label>Enter Category Name: </label>
-        <input type="text" [(ngModel)]="newCategoryName" required #categoryid="ngModel" placeholder="Enter Category Name">
-</div>
+        <input type="text" [(ngModel)]="newCategoryName" required #categoryname="ngModel" placeholder="Enter Category Name">
 </div>
 
+<br>
 
     <div>
-        <button type="button" [disabled]="categoryid.invalid" (click)="handleCreateCategory()">Create Category</button>
+        <button type="button" class="buttons" [disabled]="categoryname.invalid" (click)="handleCreateCategory()">Create Category</button>
     </div>
 
     <p class="msg-success" *ngIf="isSuccess">
-        New category was created successfully.
+        New category is created successfully.
     </p>
+
+</div>
 

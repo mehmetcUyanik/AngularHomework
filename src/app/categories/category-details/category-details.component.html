@@ -1,10 +1,40 @@
 <ul>
     <li>
+        <u><h2>Category Info</h2></u>
+    </li>
+<br>
+    <li>
         <strong>
-            Category Name
+            Category ID : 
+        </strong>
+
+        {{ categoryItem?.category_id }}
+        
+    </li>
+<br>
+    <li>
+        <strong>
+            Category Name : 
         </strong>
 
         {{ categoryItem?.category_name }}
         
+    </li>
+
+    <br>
+    <li>
+        <strong>
+            Creation Date : 
+        </strong>
+
+        {{ categoryItem?.creation_date }}
+        
+    </li>
+    <br>
+    <li>
+        <strong>
+            Post Count In This Category : 
+        </strong>
+        {{ post_count }}
     </li>
 </ul>

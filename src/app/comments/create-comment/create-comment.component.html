@@ -2,21 +2,22 @@
     <div>
         <label>Enter Post ID: </label>
         <input type="text" [(ngModel)]="newPostId" required #postid="ngModel" placeholder="Enter Post ID">
-
+        <br><br>
         <label>Enter User ID: </label>
         <input type="text" [(ngModel)]="newUserId" required #userid="ngModel" placeholder="Enter User ID">
-
+        <br><br>
         <label>Comment: </label>
         <input type="text" [(ngModel)]="newComment" required #comment="ngModel" placeholder="Enter Comment">
     </div>
-</div>
+<br>
 
 
     <div>
-        <button type="button" [disabled]="postid.invalid || userid.invalid || comment.invalid" (click)="handleCreateComment()">Create Comment</button>
+        <button type="button" class="buttons" [disabled]="postid.invalid || userid.invalid || comment.invalid" (click)="handleCreateComment()">Create Comment</button>
     </div>
 
     <p class="msg-success" *ngIf="isSuccess">
-        New comment was created successfully.
+        New comment is created successfully.
     </p>
+</div>
 

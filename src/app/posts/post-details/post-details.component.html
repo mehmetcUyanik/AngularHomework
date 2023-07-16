@@ -1,13 +1,70 @@
-
-
-
 <ul>
     <li>
-        <strong>ID: </strong> {{ postItem?.post_id }}
+        <u><h2>Post Info</h2></u>
     </li>
-
+<br>
     <li>
-        <strong>Content: </strong> {{ postItem?.content }}
+        <strong>Post ID : </strong> {{ postItem?.post_id }}
     </li>
-
+<br>
+<li>
+    <strong>Title : </strong> {{ postItem?.title }}
+</li>
+<br>
+    <li>
+        <strong>Content : </strong> {{ postItem?.content }}
+    </li>
+    <br>
+    <li>
+        <strong>View Count : </strong> {{ postItem?.viewCount }}
+    </li>
+    <br>
+    <li>
+        <strong>Creation Date : </strong> {{ postItem?.creation_date }}
+    </li>
+    <br>
+    <li>
+        <strong>Is Published : </strong> {{ postItem?.is_published }}
+    </li>
+    <br>
+    <li>
+        <u><h2>User Info</h2></u>
+    </li>
+    <br>
+    <li>
+        <strong>User ID : </strong> {{ postItem?.user_id }}
+    </li>
+    <br>
+    <li>
+        <strong>Username : </strong> {{ userItem?.username }}
+    </li>
+    <br>
+    <li>
+        <strong>E-mail : </strong> {{ userItem?.email }}
+    </li>
+    <br>
+    <li>
+        <strong>Creation Date : </strong> {{ userItem?.creation_date }}
+    </li>
+    <br>
+    <li>
+        <strong>Is Active : </strong> {{ userItem?.is_active }}
+    </li>
+    <br>
+    <li>
+        <u><h2>Category Info</h2></u>
+    </li>
+    <br>
+    <li>
+        <strong>Category ID : </strong> {{ categoryItem?.category_id }}
+    </li>
+    <br>
+    <li>
+        <strong>Category Name : </strong> {{ categoryItem?.category_name }}
+    </li>
+    <br>
+    <li>
+        <strong>Creation Date : </strong> {{ categoryItem?.creation_date }}
+    </li>
+    
 </ul>

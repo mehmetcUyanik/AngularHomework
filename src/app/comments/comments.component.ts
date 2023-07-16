@@ -100,6 +100,8 @@ export class CommentsComponent implements OnInit{
     let Comment : Comments = fg.value;
 
     this.commentService.updateComment1(Comment, id);
+
+    this.editClick = !this.editClick;
   }
 
 }

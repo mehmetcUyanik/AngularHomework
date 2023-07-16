@@ -15,6 +15,8 @@ export class CategoryDetailsComponent implements OnInit{
 
   categoryList: Categories[]=[];
 
+  post_count: number;
+
   constructor(private categoryService: CategoryService,
     private route: ActivatedRoute,
     private router: Router){
@@ -22,6 +24,7 @@ export class CategoryDetailsComponent implements OnInit{
     const params = this.route.snapshot.params;
     const categoryId = parseInt(params['id']);
     this.categoryItem = this.categoryService.getCategoryContent(categoryId);
+    this.post_count = this.categoryService.getPostCount(categoryId);
     if (!this.categoryItem) {
       this.router.navigateByUrl('/categories');
     }

@@ -19,42 +19,49 @@
                 <td>{{ users.email }}</td>
                 <td>{{ users.creation_date }}</td>
                 <td>{{ users.is_active }}</td>
-                <td><button type="button" (click)="handleEditButton(users.user_id)">Edit</button></td>
-                <td><button type="button" (click)="handleUserDeleteButton(users.user_id)">Delete</button></td>
+                <td><button type="button" class="buttons" (click)="handleEditButton(users.user_id)">Edit</button></td>
+                <td><button type="button" class="buttons" (click)="handleUserDeleteButton(users.user_id)">Delete</button></td>
             </tr>
         </tbody>
         
         </table>
         </div>
 
+        <div class="edit">
+
         <form *ngIf="editClick" [formGroup]="userFormGroup"(ngSubmit)="updateUser(userFormGroup,id)">
 
         <p>
             Editing {{ id }}. user.
-        </p>
-        <label for="user_id">User ID</label>
-        <input type="text" formControlName="user_id">
+        </p><br>
+        <label for="user_id">User ID : </label>
+        <input type="text" formControlName="user_id"><br><br>
 
-        <label for="username">Username</label>
-        <input type="text" formControlName="username">
+        <label for="username">Username : </label>
+        <input type="text" formControlName="username"><br><br>
 
-        <label for="email">E-mail</label>
-        <input type="text" formControlName="email">
+        <label for="email">E-mail : </label>
+        <input type="text" formControlName="email"><br><br>
 
-        <label for="creation_date">Creation Date</label>
-        <input type="text" formControlName="creation_date">
+        <label for="creation_date">Creation Date : </label>
+        <input type="text" formControlName="creation_date"><br><br>
 
-        <label for="is_active">Is Active</label>
-        <input type="text" formControlName="is_active">
+        <label for="is_active">Is Active : </label>
+        <input type="text" formControlName="is_active"><br><br>
 
-        <button type="submit">Edit Save</button>
+        <button type="submit" class="buttons">Edit Save</button>
 
-        <button type="button" (click)="handleCancelButton()">Cancel</button>
+        <br><br>
+
+        <button type="button" class="buttons" (click)="handleCancelButton()">Cancel</button>
     </form>
+
+</div>
         
-        <div>
-            <app-button (onButtonClick)="routeCreateUser()" [buttonText]="'Click For Create User'" [buttonType]="'primary'"></app-button>
-        </div>
+    <div class="app-button">
+        <app-button (onButtonClick)="routeCreateUser()" [buttonText]="'Create User'" [buttonType]="'primary'"></app-button>
+    </div> 
+
 
         
         

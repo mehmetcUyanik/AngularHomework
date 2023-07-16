@@ -1,4 +1,3 @@
-
 <div class="table-container">
 
     <table>
@@ -23,55 +22,58 @@
                 <td>{{ comments.comment }}</td>
                 <td>{{ comments.creation_date }}</td>
                 <td>{{ comments.is_confirmed }}</td>
-                <td><button type="button" (click)="handleContentEvent(comments.comment_id)">Details</button></td>
-                <td><button type="button" (click)="handleEditPageButton(comments.comment_id)">Edit</button></td>
-                <td><button type="button" (click)="handleCommentDeleteButton(comments.comment_id)">Delete</button></td>
+                <td><button type="button" class="buttons" (click)="handleContentEvent(comments.comment_id)">Details</button></td>
+                <td><button type="button" class="buttons" (click)="handleEditPageButton(comments.comment_id)">Edit</button></td>
+                <td><button type="button" class="buttons" (click)="handleCommentDeleteButton(comments.comment_id)">Delete</button></td>
 
             </tr>
         </tbody>   
         </table>
+    
         
 
+    <div class="edit">
         <form *ngIf="editClick" [formGroup]="commentFormGroup"(ngSubmit)="updateComment(commentFormGroup,id)">
 
         <p>
             Editing {{ id }}. comment.
-        </p>
-        <label for="comment_id">Comment ID</label>
-<input type="text" formControlName="comment_id">
+        </p><br>
+        <label for="comment_id">Comment ID : </label>
+<input type="text" formControlName="comment_id"><br><br>
 
-<label for="post_id">Post ID</label>
-<input type="text" formControlName="post_id">
+<label for="post_id">Post ID : </label>
+<input type="text" formControlName="post_id"><br><br>
 
-<label for="user_id">User ID</label>
-<input type="text" formControlName="user_id">
+<label for="user_id">User ID : </label>
+<input type="text" formControlName="user_id"><br><br>
 
-<label for="comment">Comment</label>
-<input type="text" formControlName="comment">
+<label for="comment">Comment : </label>
+<input type="text" formControlName="comment"><br><br>
 
-<label for="creation_date">Creation Date</label>
-<input type="text" formControlName="creation_date">
+<label for="creation_date">Creation Date : </label>
+<input type="text" formControlName="creation_date"><br><br>
 
-<label for="is_confirmed">Is Confirmed</label>
-<input type="text" formControlName="is_confirmed">
-<button type="submit">Edit Save</button>
-<button type="button" (click)="handleCancelButton()">Cancel</button>
+<label for="is_confirmed">Is Confirmed : </label>
+<input type="text" formControlName="is_confirmed"><br><br>
+<button type="submit" class="buttons">Edit Save</button>
+<br><br>
+
+<button type="button" class="buttons" (click)="handleCancelButton()">Cancel</button>
 </form>
 
-
-    <div>
+</div>
         <div class="pagination-buttons">
-            <button type="button" (click)="handlePreviousPageButton()"
+            <button type="button" class="buttons" (click)="handlePreviousPageButton()"
             [disabled]="pageIndex === 0">Previous</button>
-            <button type="button" (click)="handleNextPageButton()"
+            <button type="button" class="buttons" (click)="handleNextPageButton()"
             [disabled]="pageIndex === totalPage -1">Next</button>
         </div>
+
     </div>
+    
 
-</div>
-
-    <div>
-        <app-button (onButtonClick)="routeCreateComment()" [buttonText]="'Click For Create Comments'" [buttonType]="'primary'"></app-button>
+    <div class="app-button">
+        <app-button (onButtonClick)="routeCreateComment()" [buttonText]="'Create Comment'" [buttonType]="'primary'"></app-button>
         </div>
         
         
